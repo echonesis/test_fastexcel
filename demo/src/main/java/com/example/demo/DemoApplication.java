@@ -57,7 +57,7 @@ public class DemoApplication {
 		FastExcel.read(fileName, DemoData.class, new DemoDataListener()).sheet().doRead();
 		*/
 		
-		String fileName = "demo.csv";
+		String fileName = "demo2.csv";
 		/* 
 		List<DemoData> tmpList = FastExcel.read(fileName, DemoData.class, new DemoDataListener())
 			.csv()
@@ -75,7 +75,7 @@ public class DemoApplication {
 		}
 					*/
 		
-		CSVFormat csvFormat = CSVFormat.DEFAULT.builder().setDelimiter(CsvConstant.AT).build();
+		CSVFormat csvFormat = CSVFormat.DEFAULT.builder().setDelimiter(CsvConstant.COMMA).setNullString("NA").build();
 		//File csvFile = TestFileUtil.readFile(fileName);
 		DemoDataListener listener = new DemoDataListener();
 		try (ExcelReader excelReader = FastExcel.read(fileName, DemoData.class, listener).build()) {
